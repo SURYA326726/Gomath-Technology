@@ -1,11 +1,24 @@
-<div class="navbar">
-   <img src="logo.png">
-    <ul class="menu">
-        <li class="menuItem" (click)="switchTo('aboutUs')">About</li>
-        <li class="menuItem" (click)="switchTo('productList')">Products</li>
-        <li class="menuItem" (click)="switchTo('contactUs')">Contact</li>
-    </ul>
-   <img class="profileIcon" src="profile.webp" (click)="toggleProfileModal()">
+<div class="navbar glass-effect">
+   <div class="logo-container">
+      <img src="logo.png" class="logo">
+      <span class="logo-text">Gomath<span class="text-gradient">Tech</span></span>
+   </div>
+   
+   <div class="nav-content" [class.active]="isMenuOpen">
+      <ul class="menu">
+          <li class="menuItem" (click)="switchTo('aboutUs'); toggleMenu()">About</li>
+          <li class="menuItem" (click)="switchTo('productList'); toggleMenu()">Products</li>
+          <li class="menuItem" (click)="switchTo('contactUs'); toggleMenu()">Contact</li>
+      </ul>
+      <div class="profile-section">
+          <img class="profileIcon" src="profile.webp" (click)="toggleProfileModal()">
+      </div>
+   </div>
+
+   <button class="mobile-menu-btn" (click)="toggleMenu()">
+      <span class="material-icons">menu</span>
+   </button>
+
    @if (showProfileModal) {
     <app-profile-modal (close)="toggleProfileModal()"></app-profile-modal>
    }
