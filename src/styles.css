@@ -1,18 +1,38 @@
 /* Global Styles */
 :root {
-  --primary-bg: #020617; /* Slate 950 */
-  --card-bg: #0f172a;    /* Slate 900 */
-  --text-main: #f8fafc;  /* Slate 50 */
-  --text-muted: #94a3b8; /* Slate 400 */
+  /* Light Theme (Default - White & Blue) */
+  --primary-bg: #f8fafc;       /* Slate 50 */
+  --card-bg: #ffffff;          /* White */
+  --text-main: #1e293b;        /* Slate 800 */
+  --text-muted: #64748b;       /* Slate 500 */
   
-  --accent-cyan: #06b6d4;  /* Cyan 500 */
-  --accent-blue: #3b82f6;  /* Blue 500 */
-  --accent-purple: #a855f7; /* Purple 500 */
+  --accent-cyan: #06b6d4;      /* Cyan 500 (kept for accents) */
+  --accent-blue: #0078ff;      /* Brand Blue */
+  --accent-purple: #7c3aed;    /* Violet 600 */
+  
+  --gradient-primary: linear-gradient(135deg, #0078ff 0%, #00d2ff 100%);
+  --gradient-secondary: linear-gradient(135deg, #0078ff 0%, #7c3aed 100%);
+  
+  --font-main: 'Poppins', sans-serif;
+  
+  --glass-bg: rgba(255, 255, 255, 0.8);
+  --glass-border: rgba(0, 0, 0, 0.08);
+  --glass-shadow: 0 4px 20px -5px rgba(0,0,0,0.1);
+}
+
+/* Dark Mode Override */
+.dark-mode {
+  --primary-bg: #020617; 
+  --card-bg: #0f172a;    
+  --text-main: #f8fafc;  
+  --text-muted: #94a3b8; 
+  
+  --accent-cyan: #06b6d4;  
+  --accent-blue: #3b82f6;  
+  --accent-purple: #a855f7; 
   
   --gradient-primary: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-blue) 100%);
   --gradient-secondary: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-purple) 100%);
-  
-  --font-main: 'Outfit', sans-serif;
   
   --glass-bg: rgba(15, 23, 42, 0.6);
   --glass-border: rgba(255, 255, 255, 0.1);

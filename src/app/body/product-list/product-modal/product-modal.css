@@ -2,9 +2,9 @@
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(8px);
-  z-index: 1000;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  z-index: 1100;
 }
 
 /* ================= MODAL ================= */
@@ -14,34 +14,34 @@
   left: 50%;
   transform: translate(-50%, -50%);
 
-  width: 700px;
+  width: 800px;
   max-width: 90vw;
-  max-height: 85vh;
+  max-height: 90vh;
   overflow-y: auto;
 
-  background: var(--card-bg); /* Dark bg */
+  background: var(--card-bg);
+  color: var(--text-main);
   border-radius: 24px;
   padding: 40px;
 
-  box-shadow: var(--glass-shadow);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   border: 1px solid var(--glass-border);
 
   display: flex;
   flex-direction: column;
   gap: 30px;
 
-  z-index: 1001;
+  z-index: 1101;
   font-family: var(--font-main);
-  color: var(--text-main);
 
-  animation: modalFade 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: modalFade 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* ================= ANIMATION ================= */
 @keyframes modalFade {
   from {
     opacity: 0;
-    transform: translate(-50%, -45%) scale(0.95);
+    transform: translate(-50%, -48%) scale(0.96);
   }
   to {
     opacity: 1;
@@ -69,8 +69,8 @@
 }
 
 .close-btn:hover {
-  color: white;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0,0,0,0.05);
+  color: var(--accent-blue);
 }
 
 /* ================= CONTENT ================= */
@@ -104,10 +104,10 @@
 .product-services h3 {
   font-size: 1.1rem;
   font-weight: 600;
-  color: var(--accent-cyan);
+  color: var(--accent-blue);
   margin-bottom: 15px;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
 }
 
 .service-list {
@@ -117,18 +117,18 @@
 }
 
 .service-chip {
-  background: rgba(6, 182, 212, 0.1);
-  color: var(--accent-cyan);
+  background: rgba(0, 120, 255, 0.08);
+  color: var(--accent-blue);
   padding: 8px 16px;
   border-radius: 99px;
   font-size: 0.9rem;
   font-weight: 500;
-  border: 1px solid rgba(6, 182, 212, 0.2);
+  border: 1px solid rgba(0, 120, 255, 0.15);
   transition: 0.2s;
 }
 
 .service-chip:hover {
-  background: rgba(6, 182, 212, 0.2);
+  background: rgba(0, 120, 255, 0.15);
   transform: translateY(-2px);
 }
 
@@ -143,9 +143,9 @@
 .modal-image {
   width: 100%;
   border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
   object-fit: contain;
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--primary-bg);
 }
 
 /* ================= FOOTER ================= */
@@ -157,28 +157,28 @@
 }
 
 .quote-btn {
-  padding: 14px 28px;
+  padding: 14px 32px;
   font-size: 1rem;
-  background: var(--gradient-secondary);
+  background: var(--gradient-primary);
   color: #fff;
   border: none;
   border-radius: 12px;
   cursor: pointer;
   transition: 0.3s;
   font-weight: 600;
-  box-shadow: 0 4px 15px rgba(168, 85, 247, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 120, 255, 0.25);
 }
 
 .quote-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(168, 85, 247, 0.4);
+  box-shadow: 0 8px 25px rgba(0, 120, 255, 0.35);
 }
 
 /* ================= MOBILE VIEW ================= */
-@media (max-width: 768px) {
+@media (max-width: 850px) {
   .product-modal {
     width: 95%;
-    max-height: 90vh;
+    max-height: 85vh;
     padding: 24px;
   }
 
@@ -189,15 +189,15 @@
 
   .modal-right {
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 0;
+  }
+
+  .modal-image {
+    max-height: 250px;
   }
 
   .product-title {
-    font-size: 1.5rem;
-  }
-
-  .modal-footer {
-    justify-content: stretch;
+    font-size: 1.6rem;
   }
 
   .quote-btn {

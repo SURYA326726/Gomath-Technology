@@ -1,7 +1,7 @@
 .navbar {
   width: 100%;
   height: 80px;
-  background: rgba(2, 6, 23, 0.85); /* Dark glass */
+  background: var(--glass-bg);
   backdrop-filter: blur(12px);
   display: flex;
   align-items: center;
@@ -13,6 +13,7 @@
   left: 0;
   z-index: 1000;
   transition: all 0.3s ease;
+  box-shadow: var(--glass-shadow);
 }
 
 .logo-container {
@@ -23,7 +24,7 @@
 }
 
 .logo {
-  height: 40px;
+  height: 45px;
   width: auto;
 }
 
@@ -34,18 +35,28 @@
   font-family: var(--font-main);
 }
 
+.text-gradient {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Nav Content */
 .nav-content {
   display: flex;
   align-items: center;
   gap: 30px;
+  margin-left: auto; /* Push to right */
 }
 
 .menu {
   list-style: none;
   display: flex;
-  gap: 40px;
+  gap: 35px;
   padding: 0;
   margin: 0;
+  align-items: center;
 }
 
 .menuItem {
@@ -55,41 +66,46 @@
   cursor: pointer;
   transition: color 0.3s ease;
   position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .menuItem:hover {
-  color: var(--accent-cyan);
+  color: var(--accent-blue);
 }
 
-.menuItem::after {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--gradient-primary);
-  transition: width 0.3s ease;
+/* Actions */
+.desktop-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
-.menuItem:hover::after {
-  width: 100%;
-}
-
-.profileIcon {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  object-fit: cover;
+.theme-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
   cursor: pointer;
-  border: 2px solid var(--glass-border);
-  transition: all 0.3s ease;
+  transition: 0.3s;
+  padding: 8px;
+  border-radius: 50%;
 }
 
-.profileIcon:hover {
-  border-color: var(--accent-cyan);
-  box-shadow: 0 0 15px rgba(6, 182, 212, 0.3);
+.theme-btn:hover {
+  color: var(--accent-blue);
+  background: rgba(0,0,0,0.05);
 }
+
+.login-btn {
+  padding: 8px 24px !important;
+  font-size: 0.95rem;
+}
+
+.mobile-only-profile {
+  display: none;
+}
+
 
 .mobile-menu-btn {
   display: none;

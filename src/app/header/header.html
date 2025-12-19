@@ -1,23 +1,35 @@
 <div class="navbar glass-effect">
-   <div class="logo-container">
+   
+   <!-- Mobile Menu Button (Left Side) -->
+   <button class="mobile-menu-btn" (click)="toggleMenu()">
+      <span class="material-icons">menu</span>
+   </button>
+
+   <div class="logo-container" routerLink="/">
       <img src="logo.png" class="logo">
       <span class="logo-text">Gomath<span class="text-gradient">Tech</span></span>
    </div>
    
    <div class="nav-content" [class.active]="isMenuOpen">
       <ul class="menu">
-          <li class="menuItem" (click)="switchTo('aboutUs'); toggleMenu()">About</li>
-          <li class="menuItem" (click)="switchTo('productList'); toggleMenu()">Products</li>
-          <li class="menuItem" (click)="switchTo('contactUs'); toggleMenu()">Contact</li>
+          <li class="menuItem" (click)="switchTo('aboutUs')">About</li>
+          <li class="menuItem" (click)="switchTo('productList')">Products</li>
+          <li class="menuItem" (click)="switchTo('contactUs')">Contact</li>
+          
+          <!-- Profile in Mobile Menu -->
+          <li class="menuItem mobile-only-profile" (click)="toggleProfileModal()">
+             <span class="material-icons">person</span> Profile
+          </li>
       </ul>
-      <div class="profile-section">
-          <img class="profileIcon" src="profile.webp" (click)="toggleProfileModal()">
+
+      <div class="desktop-actions">
+         <button class="theme-btn" (click)="toggleTheme()">
+            <span class="material-icons">{{ isDarkMode ? 'light_mode' : 'dark_mode' }}</span>
+         </button>
+
+         <button class="btn-primary login-btn" (click)="onLogin()">Login</button>
       </div>
    </div>
-
-   <button class="mobile-menu-btn" (click)="toggleMenu()">
-      <span class="material-icons">menu</span>
-   </button>
 
    @if (showProfileModal) {
     <app-profile-modal (close)="toggleProfileModal()"></app-profile-modal>
