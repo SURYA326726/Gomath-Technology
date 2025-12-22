@@ -1,20 +1,14 @@
-<div class="TrustedOrgCmp">
-  <div>
-    <span class="trustedHeader">Trusted by</span>
-    <hr />
+<section class="trusted-section">
+  <div class="trusted-header">
+    <h3 class="trusted-title">Trusted by Leading Organizations</h3>
   </div>
-  <div class="filter-tabs">
-    <button *ngFor="let cat of categories" 
-            [class.active]="selectedCategory === cat" 
-            (click)="filterClients(cat)">
-      {{ cat }}
-    </button>
+  <div class="logos-grid">
+    <img src="Org1.jpeg" class="org-logo" />
+    <img src="Org2.webp" class="org-logo" />
+    <img src="Org3.png" class="org-logo" />
+    <img src="Org4.webp" class="org-logo" />
+    <img src="Org5.webp" class="org-logo" />
+    <img src="Org6.webp" class="org-logo" />
+    <img src="Org7.webp" class="org-logo" />
   </div>
-
-  <div class="OrgName">
-    <div *ngFor="let client of filteredClients" class="client-card">
-        <img [src]="client.image" [alt]="client.name" class="orgLogo" />
-        <span class="client-name">{{ client.name }}</span>
-    </div>
-  </div>
-</div>
+</section>

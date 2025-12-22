@@ -8,13 +8,9 @@ import { ProfileModal } from './profile-modal/profile-modal';
   styleUrl: './header.css'
 })
 export class Header {
-  switchTo(elementID:string){
-      const element=document.getElementById(elementID);
-      element?.scrollIntoView({behavior:'smooth',block:'center'})
-  }
-
   showProfileModal = false;
   isMenuOpen = false;
+  isDarkMode = false;
 
   toggleProfileModal() {
     this.showProfileModal = !this.showProfileModal;
@@ -24,4 +20,25 @@ export class Header {
     this.isMenuOpen = !this.isMenuOpen;
   }
 
+  toggleTheme() {
+    this.isDarkMode = !this.isDarkMode;
+    if (this.isDarkMode) {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+    }
+  }
+
+  switchTo(sectionId: string) {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      this.isMenuOpen = false; // Close menu on selection
+    }
+  }
+
+  onLogin() {
+    // Navigate to Login page
+    window.location.href = '/login'; 
+  }
 }
