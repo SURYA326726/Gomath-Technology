@@ -14,9 +14,14 @@ export class Header {
   }
 
   showProfileModal = false;
+  isMenuOpen = false;
 
-toggleProfileModal() {
-  this.showProfileModal = !this.showProfileModal;
-}
+  toggleProfileModal() {
+    this.showProfileModal = !this.showProfileModal;
+  }
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
 
 }

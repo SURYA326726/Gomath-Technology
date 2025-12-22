@@ -1,1 +1,32 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --primary-color: #1877F2; /* Facebook Blue */
+  --secondary-color: #4285F4; /* Google G Blue */
+  --accent-color: #ffffff;
+  --text-color: #333333;
+  --bg-color: #f0f2f5;
+  --secondary-bg: #ffffff;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+:root {
+    --theme-fb-blue: #1877F2;
+    --theme-google-blue: #4285F4;
+    --theme-google-red: #DB4437;
+    --theme-google-yellow: #F4B400;
+    --theme-google-green: #0F9D58;
+    --theme-bg-light: #F0F2F5; /* FB-like background */
+    --theme-text-dark: #1C1E21;
+}
+
+body {
+    background-color: var(--theme-bg-light);
+    color: var(--theme-text-dark);
+    font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+    margin: 0;
+}

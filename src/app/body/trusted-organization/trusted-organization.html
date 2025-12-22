@@ -3,13 +3,18 @@
     <span class="trustedHeader">Trusted by</span>
     <hr />
   </div>
+  <div class="filter-tabs">
+    <button *ngFor="let cat of categories" 
+            [class.active]="selectedCategory === cat" 
+            (click)="filterClients(cat)">
+      {{ cat }}
+    </button>
+  </div>
+
   <div class="OrgName">
-    <img src="Org1.jpeg" class="orgLogo" />
-    <img src="Org2.webp" class="orgLogo" />
-    <img src="Org3.png" class="orgLogo" />
-    <img src="Org4.webp" class="orgLogo" />
-    <img src="Org5.webp" class="orgLogo" />
-    <img src="Org6.webp" class="orgLogo" />
-    <img src="Org7.webp" class="orgLogo" />
+    <div *ngFor="let client of filteredClients" class="client-card">
+        <img [src]="client.image" [alt]="client.name" class="orgLogo" />
+        <span class="client-name">{{ client.name }}</span>
+    </div>
   </div>
 </div>

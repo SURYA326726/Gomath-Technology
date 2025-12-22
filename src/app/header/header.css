@@ -19,16 +19,15 @@
   z-index: 1000;
 }
 
-/* Logo image styling */
-.navbar img:first-child {
-  height: 45px;
-  width: auto;
-  object-fit: contain;
+.logo-text {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--primary-color, #1877F2);
   cursor: pointer;
 }
 
 .menu {
-   flex: 1;     
+  flex: 1;     
   list-style: none;
   display: flex;
   gap: 20px;
@@ -36,7 +35,6 @@
   padding: 0;
   justify-content: center;     
 }
-
 
 .menuItem {
   font-size: 15px;
@@ -47,11 +45,17 @@
 }
 
 .menuItem:hover {
-  color: #0056ff;
+  color: var(--primary-color, #1877F2);
   transform: translateY(-2px);
 }
 
 /* Profile Icon */
+.profile-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
 .profileIcon {
   width: 40px;
   height: 40px;
@@ -60,15 +64,48 @@
   cursor: pointer;
   border: 2px solid #ddd;
   transition: 0.3s ease;
-
-  position: fixed;   /* 🔥 STAYS FIXED */
-  top: 12px;         /* adjust to match your navbar */
-  right: 25px;       /* stays aligned to right */
-  z-index: 1200;     /* above everything */
 }
 
-
 .profileIcon:hover {
-  border-color: #0056ff;
+  border-color: var(--primary-color, #1877F2);
   transform: scale(1.08);
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    color: #333;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        padding: 20px 0;
+        margin: 0;
+        text-align: center;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+        font-size: 28px;
+    }
+
+    .menuItem {
+        padding: 15px;
+        border-bottom: 1px solid #f0f0f0;
+        width: 100%;
+        box-sizing: border-box;
+    }
 }

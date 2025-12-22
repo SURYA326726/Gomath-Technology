@@ -1,12 +1,24 @@
 <div class="navbar">
-   <img src="logo.png">
-    <ul class="menu">
-        <li class="menuItem" (click)="switchTo('aboutUs')">About</li>
-        <li class="menuItem" (click)="switchTo('productList')">Products</li>
-        <li class="menuItem" (click)="switchTo('contactUs')">Contact</li>
+    <div class="logo-container">
+       <span class="logo-text">NewVenus</span>
+    </div>
+
+    <!-- Hamburger Icon for Mobile -->
+    <div class="hamburger" (click)="toggleMenu()">
+        <span class="material-icons">menu</span>
+    </div>
+
+    <!-- Menu Items -->
+    <ul class="menu" [class.active]="isMenuOpen">
+        <li class="menuItem" (click)="switchTo('aboutUs'); toggleMenu()">About</li>
+        <li class="menuItem" (click)="switchTo('productList'); toggleMenu()">Products</li>
+        <li class="menuItem" (click)="switchTo('contactUs'); toggleMenu()">Contact</li>
     </ul>
-   <img class="profileIcon" src="profile.webp" (click)="toggleProfileModal()">
-   @if (showProfileModal) {
-    <app-profile-modal (close)="toggleProfileModal()"></app-profile-modal>
-   }
+
+    <div class="profile-container">
+        <img class="profileIcon" src="profile.webp" (click)="toggleProfileModal()">
+        @if (showProfileModal) {
+            <app-profile-modal (close)="toggleProfileModal()"></app-profile-modal>
+        }
+    </div>
 </div>
