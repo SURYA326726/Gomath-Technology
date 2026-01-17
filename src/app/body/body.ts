@@ -7,6 +7,7 @@ import { ContactUs } from "./contact-us/contact-us";
 import { Services } from "./services/services";
 import { TechStack } from "./tech-stack/tech-stack";
 import { Testimonials } from "./testimonials/testimonials";
+import { Advertics } from "./advertics/advertics";
 
 @Component({
   selector: 'app-body',
@@ -18,7 +19,8 @@ import { Testimonials } from "./testimonials/testimonials";
     ContactUs,
     Services,
     TechStack,
-    Testimonials
+    Testimonials,
+    Advertics
   ],
   templateUrl: './body.html',
   styleUrl: './body.css'

@@ -15,7 +15,7 @@ export class Advertics implements OnInit {
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
-    this.http.get('https://gomath-backend.onrender.com/products').subscribe((res: any) => {
+    this.http.get('https://api.gomathtechnologies.com/products').subscribe((res: any) => {
       this.products = res.data;
     });
   }
