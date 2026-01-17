@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -8,7 +9,8 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './login.css'
 })
 export class Login {
- screen: string = 'login';   // login | forgot-username | forgot-password | otp
+  private router = inject(Router);
+  screen: string = 'login';   // login | forgot-username | forgot-password | otp
 
   login = {
     username: '',
@@ -41,7 +43,7 @@ export class Login {
 
   verifyOtp() {
     // Navigate home after verification
-    window.location.href = '/'; 
+    this.router.navigate(['/']); 
   }
 
   moveNext(event: any, index: number) {

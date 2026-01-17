@@ -1,4 +1,8 @@
 /* Global Styles */
+* {
+  box-sizing: border-box;
+}
+
 :root {
   /* Light Theme (Default - White & Blue) */
   --primary-bg: #f8fafc;       /* Slate 50 */
@@ -10,8 +14,9 @@
   --accent-blue: #0078ff;      /* Brand Blue */
   --accent-purple: #7c3aed;    /* Violet 600 */
   
-  --gradient-primary: linear-gradient(135deg, #0078ff 0%, #00d2ff 100%);
-  --gradient-secondary: linear-gradient(135deg, #0078ff 0%, #7c3aed 100%);
+  /* Changed to Pure Blue Gradient as requested */
+  --gradient-primary: linear-gradient(135deg, #0078ff 0%, #0056ff 100%);
+  --gradient-secondary: linear-gradient(135deg, #0078ff 0%, #0044cc 100%);
   
   --font-main: 'Poppins', sans-serif;
   

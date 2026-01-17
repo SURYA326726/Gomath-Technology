@@ -46,21 +46,21 @@
 .nav-content {
   display: flex;
   align-items: center;
-  gap: 30px;
-  margin-left: auto; /* Push to right */
+  gap: 20px; /* Reduced gap */
+  margin-left: auto;
 }
 
 .menu {
   list-style: none;
   display: flex;
-  gap: 35px;
+  gap: 25px; /* Reduced gap */
   padding: 0;
   margin: 0;
   align-items: center;
 }
 
 .menuItem {
-  font-size: 1rem;
+  font-size: 0.95rem; /* Slightly smaller font */
   font-weight: 500;
   color: var(--text-muted);
   cursor: pointer;
@@ -68,7 +68,8 @@
   position: relative;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
+  white-space: nowrap; /* Prevent wrapping */
 }
 
 .menuItem:hover {
@@ -76,80 +77,64 @@
 }
 
 /* Actions */
+.navbar {
+  /* ... Existing properties ... */
+  box-sizing: border-box; /* Explicit naming */
+  justify-content: space-between; /* Ensures Logo left, Menu/Actions right */
+}
+
+/* Nav Content now ONLY contains menu items */
+.nav-content {
+  margin-left: auto; /* Push to right, next to actions? */
+  margin-right: 20px; /* Space between menu and actions */
+}
+
+/* Actions always visible */
 .desktop-actions {
   display: flex;
   align-items: center;
-  gap: 15px;
-}
-
-.theme-btn {
-  background: none;
-  border: none;
-  color: var(--text-muted);
-  cursor: pointer;
-  transition: 0.3s;
-  padding: 8px;
-  border-radius: 50%;
-}
-
-.theme-btn:hover {
-  color: var(--accent-blue);
-  background: rgba(0,0,0,0.05);
-}
-
-.login-btn {
-  padding: 8px 24px !important;
-  font-size: 0.95rem;
-}
-
-.mobile-only-profile {
-  display: none;
-}
-
-
-.mobile-menu-btn {
-  display: none;
-  background: none;
-  border: none;
-  color: var(--text-main);
-  cursor: pointer;
+  gap: 12px;
 }
 
 /* Mobile Responsive */
-@media (max-width: 768px) {
-  .mobile-menu-btn {
-    display: block;
-  }
-
+@media (max-width: 900px) {
   .nav-content {
+    /* Drawer Logic for Just Links */
     position: fixed;
     top: 80px;
     left: 0;
     width: 100%;
     height: 0;
-    background: var(--primary-bg);
+    background: var(--card-bg);
     flex-direction: column;
     overflow: hidden;
     transition: height 0.3s ease;
     border-bottom: 1px solid var(--glass-border);
+    margin: 0; /* Removing auto margin */
     padding: 0;
+    z-index: 999;
   }
-
+  
   .nav-content.active {
     height: auto;
     padding: 20px 0;
-    border-bottom: 1px solid var(--glass-border);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
   }
 
-  .menu {
-    flex-direction: column;
-    gap: 20px;
-    text-align: center;
-    width: 100%;
+  /* Actions on the bar, NOT in drawer */
+  .desktop-actions {
+    /* Keep them visible on the navbar */
+    flex-direction: row; 
+    gap: 10px;
+    padding: 0;
   }
-
-  .menuItem {
-    padding: 10px 0;
-    font-size: 1.2rem;
+  
+  .login-btn {
+    padding: 8px 16px !important; /* Smaller on mobile */
+    font-size: 0.85rem;
+  }
+  
+  .theme-btn::after {
+    display: none; /* Icon only on mobile bar */
   }
 }

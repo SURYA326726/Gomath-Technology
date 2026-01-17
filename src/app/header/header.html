@@ -7,7 +7,6 @@
 
    <div class="logo-container" routerLink="/">
       <img src="logo.png" class="logo">
-      <span class="logo-text">Gomath<span class="text-gradient">Tech</span></span>
    </div>
    
    <div class="nav-content" [class.active]="isMenuOpen">
@@ -21,14 +20,14 @@
              <span class="material-icons">person</span> Profile
           </li>
       </ul>
+   </div>
 
-      <div class="desktop-actions">
-         <button class="theme-btn" (click)="toggleTheme()">
-            <span class="material-icons">{{ isDarkMode ? 'light_mode' : 'dark_mode' }}</span>
-         </button>
+   <div class="desktop-actions">
+      <button class="theme-btn" (click)="toggleTheme()">
+         <span class="material-icons">{{ isDarkMode ? 'light_mode' : 'dark_mode' }}</span>
+      </button>
 
-         <button class="btn-primary login-btn" (click)="onLogin()">Login</button>
-      </div>
+      <button class="btn-primary login-btn" (click)="onLogin()">Login</button>
    </div>
 
    @if (showProfileModal) {

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 import { ProfileModal } from './profile-modal/profile-modal';
 
 @Component({
@@ -37,8 +38,10 @@ export class Header {
     }
   }
 
+  private router = inject(Router);
+
   onLogin() {
     // Navigate to Login page
-    window.location.href = '/login'; 
+    this.router.navigate(['/login']);
   }
 }
